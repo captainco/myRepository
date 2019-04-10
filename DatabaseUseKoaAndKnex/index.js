@@ -1,11 +1,11 @@
-const Koa = require('koa');
-const app = new Koa();
+const Koa  = require('koa');
+const app  = new Koa();
 
 const knex = require('knex')({
-    client : 'mysql',
-    connection : {
-        host : '127.0.0.1',
-        user : 'nodeApp',
+    client       : 'mysql',
+    connection   : {
+        host     : '127.0.0.1',
+        user     : 'nodeApp',
         password : 'nodeApp',
         database : 'training'
     }
