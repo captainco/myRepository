@@ -6,7 +6,7 @@ module.exports = async(context, next) => {
     if(operator, numberA, numberB) {
         context.operator = operator;
         context.numberA  = numberA;
-        context.numberB  = numberB;
+        context.numberB  = parseInt(numberB);
         return await next();
     }
     context.body = {
