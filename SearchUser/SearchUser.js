@@ -10,8 +10,8 @@ router.get('/search', async(context, next) => {
 });
 
 router.get('/search/:keyword', async(context) => {
-    let items    = await knex.select('*').from('users').where('username', 'like', '%' + context.params.keyword + '%');
-    context.body = nunjucks.render('index.html',{items});
+    let users    = await knex.select('*').from('users').where('username', 'like', '%' + context.params.keyword + '%');
+    context.body = nunjucks.render('index.html', {users});
 });
 
 module.exports = router;
