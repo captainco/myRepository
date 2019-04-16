@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Search Page</title>
+        <style>
+            h1 {
+                color: red;
+            }
+            ul {
+                list-style-type: none;
+            }
+            li {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Results:</h1>
+    <ul>
+        {% for item in items %}
+        <li>ID {{ item.id }}, Name: {{ item.username }}</li>
+        {% else %}
+        <li>Not found!</li>
+        {% endfor %}
+    </ul>
+    </body>
+</html>
