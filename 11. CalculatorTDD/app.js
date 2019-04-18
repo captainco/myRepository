@@ -6,10 +6,10 @@ const assert         = require('mocha').assert;
 const chai           = require('chai');
 
 describe('Test calculator', () => {
-    const addition       = new Addition();
-    const substration    = new Substration();
-    const multiplication = new Multiplication();
-    const division       = new Division();
+    let addition       = new Addition();
+    let substration    = new Substration();
+    let multiplication = new Multiplication();
+    let division       = new Division();
 
     it('Test addition', () => {
         chai.assert.equal(addition.operate(1, 2), 3);
