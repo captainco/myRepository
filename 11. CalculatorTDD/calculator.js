@@ -15,7 +15,7 @@ class Calcualtor {
             throw new Error(`Operator [${operatorName}] is not supported!`);
         }
 
-        return operator.run(number1, number2);
+        return operator.operate(number1, number2);
     }
 }
 

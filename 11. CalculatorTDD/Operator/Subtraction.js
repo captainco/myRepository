@@ -1,5 +1,5 @@
 class Subtraction {
-    run(number1, number2) {
+    operate(number1, number2) {
         return number1 - number2;
     }
 }
