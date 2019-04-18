@@ -6,29 +6,25 @@ const assert         = require('mocha').assert;
 const chai           = require('chai');
 
 describe('Test calculator', () => {
-    const add = new Addition();
-    const sub = new Substration();
-    const mul = new Multiplication();
-    const div = new Division();
+    const addition       = new Addition();
+    const substration    = new Substration();
+    const multiplication = new Multiplication();
+    const division       = new Division();
 
     it('Test addition', () => {
-        let result = add.operate(1, 2);
-        chai.assert.equal(result, 3);
+        chai.assert.equal(addition.operate(1, 2), 3);
     });
 
     it('Test substration', () => {
-        let result = sub.operate(1, 2);
-        chai.assert.equal(result, -1);
+        chai.assert.equal(substration.operate(1, 2), -1);
     });
 
     it('Test multiplication', () => {
-        let result = mul.operate(1, 2);
-        chai.assert.equal(result, 2);
+        chai.assert.equal(multiplication.operate(1, 2), 2);
     });
 
     it('Test division', () => {
-        let result = div.operate(4, 2);
-        chai.assert.equal(result, 2);
+        chai.assert.equal(division.operate(4, 2), 2);
     });
-
+    
 });
