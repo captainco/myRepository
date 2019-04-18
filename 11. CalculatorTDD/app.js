@@ -1,25 +1,34 @@
-const Calculator     = require('./calculator');
 const Addition       = require('./Operator/Addition');
-const Subtraction    = require('./Operator/Subtraction');
+const Substration    = require('./Operator/Subtraction');
 const Multiplication = require('./Operator/Multiplication');
 const Division       = require('./Operator/Division');
+const assert         = require('mocha').assert;
 const chai           = require('chai');
-const sinon          = require('sinon');
 
+describe('Test calculator', () => {
+    const add = new Addition();
+    const sub = new Substration();
+    const mul = new Multiplication();
+    const div = new Division();
 
-describe('Test calculator with addition', () => {
-    const calculator = new Calculator();
-    const fakeOps    = {
-        operate(number1, number2) {
-            return sinon.fake.returns(2019);
-        }
-    }
-    calculator.register('fake', fakeOps);
-
-    it('should return result from operator', () => {
-        const result = calculator.calculate('fake', 1, 2);
-        sinon.assert.equals(calculator.calculate('fake', 1 , 2), 2019);
-        sinon.assert.calledOnce(fakeOps.operate(1, 2));
-        sinon.assert(fakeOps.operate().calledWith(1, 2));
+    it('Test addition', () => {
+        let result = add.operate(1, 2);
+        chai.assert.equal(result, 3);
     });
+
+    it('Test substration', () => {
+        let result = sub.operate(1, 2);
+        chai.assert.equal(result, -1);
+    });
+
+    it('Test multiplication', () => {
+        let result = mul.operate(1, 2);
+        chai.assert.equal(result, 2);
+    });
+
+    it('Test division', () => {
+        let result = div.operate(4, 2);
+        chai.assert.equal(result, 2);
+    });
+
 });
