@@ -5,7 +5,7 @@ const knex          = require('knex')(configuration);
 const router        = new Router();
 
 router.get('/search/:name', async (context) => {
-    let users    = await knex('users').where(knex.raw('?? like ?', ['users.user', '%' + context.params.name + '%']));
+    let users    = await knex.select('*').from('users').where('username', 'like', '%' + context.params.keyword.toString() + '%');
 
     context.logger.log({query: context.params.name, result: users});
 

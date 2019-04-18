@@ -5,8 +5,8 @@ module.exports = {
         client     : 'mysql',
         connection : {
         host       : 'localhost',
-        user       : 'nodeApp',
-        password   : 'nodeApp',
+        user       : 'root',
+        password   : '1',
         database   : 'training',
         charset    : 'utf8'
       }

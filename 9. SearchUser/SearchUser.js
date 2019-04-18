@@ -4,9 +4,9 @@ const knex     = require('./knex');
 const router   = new Router();
 
 router.get('/search', async(context, next) => {
-  let users    = await knex.select('*').from('users');
-  context.body = nunjucks.render('index.html',{users});
-  next();
+    let users    = await knex.select('*').from('users');
+    context.body = nunjucks.render('index.html',{users});
+    next();
 });
 
 router.get('/search/:keyword', async(context) => {
