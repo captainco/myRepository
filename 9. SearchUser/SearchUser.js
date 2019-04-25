@@ -5,6 +5,7 @@ const router   = new Router();
 
 router.get('/search', async(context, next) => {
     let users    = await knex.select('*').from('users');
+console.log(users.toString());
     context.body = nunjucks.render('index.html',{users});
     next();
 });
