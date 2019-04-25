@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>User | Result Page</title>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <h1>Result </h1>
+
+            <small class="text-muted">
+                {% if users %}
+                    found {{users.length}} user
+                {% elif addUser %}
+                    add {{addUser.length}} user
+                {% else %}
+                    {{ messageUnsuccess }}
+                {% endif %}
+            </small>
+            
+            <hr/>
+            <div class="card">
+                <ul class="list-unstyled">
+                    {% if users %}
+                        {% for user in users %}
+                        <li>
+                            <strong>{{user.getId()}}</strong> &nbsp; {{user.getPresentationName()}}
+                        </li>
+                        {% else %}
+                        <li>
+                            <small class="text-muted">No result</small>
+                        </li>
+                        {% endfor %}
+                    {% elif addUser %}
+                        <li><strong>{{ messageSuccess }}</strong></li>
+                    {% else %}
+                        <li><strong>{{ messageUnsuccess }}</strong></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </body>
+</html>
