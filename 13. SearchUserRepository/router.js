@@ -1,5 +1,4 @@
 const Router        = require('koa-router');
-
 const router        = new Router();
 
 router.get('/search/:name', async (context) => {
@@ -19,6 +18,5 @@ router.get('/add/:name', async (context) => {
         context.render('index.html', {messageUnsuccess : 'User already exist'});
     }
 });
-
 
 module.exports   = router;
