@@ -15,4 +15,4 @@ app.use(loggerProvider.loggerMiddleware(config));
 app.use(userProvider(knex));
 app.use(router.routes());
 
-app.listen(8088);
+app.listen(3000);

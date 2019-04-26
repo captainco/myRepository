@@ -4,6 +4,12 @@ class UserRepository {
     constructor(knex) {
         this.knex = knex;
     }
+
+    async getUser(user) {
+        let results = await this.knex.select('*').from('users').where('user', user);
+        return results.map(result => new User(result.id, result.user));
+    }
+
     async search(condition) {
         let searchQuery = condition.buildWhereCondition(this.knex.select('*').from('users'));
         let results     = await searchQuery;
