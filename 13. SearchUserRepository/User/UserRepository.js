@@ -10,8 +10,8 @@ class UserRepository {
     }
 
     async addUser(name) {
-        let results = await this.knex('users').insert({user : name});
-        return results;
+        let ids = await this.knex('users').insert({user : name});
+        
     }
 }
 
